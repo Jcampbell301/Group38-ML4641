@@ -2,7 +2,6 @@
 Group 38, Machine Learning 4641
 
 Make sure all the files are in the same directory when you run.
-
 clean.py: processes and cleans data
 firePCA.py: implements PCA to return a reduced features matrix to use for supervised modeling.
 WildfirePCA.py: implements PCA for the purpose of obtaining useful statistics on the PCA dimensionality reduction.
