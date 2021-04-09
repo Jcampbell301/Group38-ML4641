@@ -40,9 +40,17 @@ CS 4641 - Wildfire Susceptibility Mapping
  <p><b>Table 1</b>, shown below, details each variable used and provides a brief description. Note that some variables were derived from a single dataset. For example, max temperature was calculated on a yearly basis from the same data set that average temperature was calculated.</p>
  <img src="Table 1.jpg" alt="Table 1" height = "474" width = "500" class="center">
  
+<h3>Data Cleaning</h3> 
+ <p>In order to build a predictive model, labels were needed for the purpose of training and prediction. To do this, annual reports for each year from 2011-2020 published by the National Interagency Coordination Center were utilized[5]. These reports gave wildfire counts on a state by state basis for the intercontinental U.S. for each year.</p>
+
+ <p>With labels and features for each state each year across a ten year period utilized, processing and cleaning of the data was performed.</p>
+
+ <p>These data were all implemented into different sheets and then fully compiled into one sheet to be exported as a CSV file for ease of use with code. The CSV file was imported into clean.py along with the Pandas module. The read_csv() function provided a convenient way to organize all these data into a dataframe. When importing the CSV file, a couple features of the data were incorporated as strings rather than numerical values (int, float, etc.), which were more desirable to model with. Strings would cause problems within the model as the object values would not be feasible for numerical modeling.</p>
+
+ 
 <h3>Methods</h3> 
 <h4>Correlation Matrix</h4>
- <p> </p>
+ <p></p>
  
 <h4>PCA</h4>
  <p>Due to the plethora of variables that can go into the creation of forest fires previously stated, dimensionality reduction using PCA was implemented to shrink the number of dimensions in the model, thus simplifying it, while still maintaining effectiveness (Chas-Amil et al). 
