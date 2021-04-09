@@ -64,7 +64,7 @@ CS 4641 - Wildfire Susceptibility Mapping
  <p>With the data cleaned, a correlation matrix (<b>Figure 1</b>) was made by plotting the correlation output between each parameter using the built in correl() function of Google Sheets. The output was a 12 by 12 matrix with each entry corresponding to the correlation between its respective row and column variable. For this reason, the diagonal values were 1, and the matrix is symmetric across the diagonal.</p>
  
  <figure>
-  <img src="correlationMat.jpg" alt="CorrMat" height = "325" width = "1340" class="center">
+  <img src="correlationMat.jpg" alt="CorrMat" height = "657" width = "2673" class="center">
   <figcaption><i><b>Figure.1</b> Correlation Matrix</i></figcaption>
  </figure>
  
@@ -105,8 +105,10 @@ CS 4641 - Wildfire Susceptibility Mapping
  <img src = "LogRes.png" alt = "Logistic Regression Model Predictions v Actual">
  <h4 style="text-align:center;">Figure 9</h4>
 <h3>Discussion</h3>
-<p>One challenge that this project will have to work around is potential inconsistency in datasets due to the nature of climate science. For example, a measurement as basic as temperature can have a large amount of variance for a location depending on how it is measured. If the measurement occurs in a shady area, over concrete, during a windy period, etc., then that can affect the reading. Additionally, the time range of datasets might prove to be a source of inconsistency. Technology is constantly developing. The instruments used to measure each of the factors that might be considered for wildfires have likely changed in some capacity over time. This will likely further contribute to a lack of precision for any datasets used. While there may be obstacles present, the potential outcome is meaningful: having a means to predict wildfire impact can save property, the climate, and ultimately, lives. </p>
-
+<p>The data collected by our group was based on the most meaningful factors that were available publicly that could help predict wildfire amounts and susceptibility. While some of the features of data were not as readily available as other features, we were able to efficiently incorporate all of the data that we found in order to utilize them effectively in our model. Our models we implemented were effective in undergoing more efficient predictions or providing insightful predictions themselves. Our final results show generally accurate predictions of both the susceptibility of wildfires through classification and the number of wildfires predicted through linear regression. With our methods, this meaningful predictive analysis will lead to more efficient resource allocation and scheduling routines to help fight and prevent wildfires.<\p>
+<p>While a bulk of our modeling implementations are complete, there are still a couple things we would like to potentially implement in the future. One main thing we would like to implement is to utilize logistic regression using the reduced features matrix from PCA.<\p>
+<p>With wildfires becoming a more paramount concern in recent memory, it is imperative that organizations dedicated more sophisticated efforts to the alleviation of wildfires. Our predictive models were designed with the intent of contributing to this cause. While there were obstacles present, the potential outcome is meaningful: having a means to predict wildfire impact can save property, the climate, and ultimately, lives.<\p>
+ 
 <h3>References</h3>
 <p>Chas-Amil, Maria Luisa; Touza, Julia M.; Prestemon, Jeffrey P.; McClean, Colin J. 2012. Natural and social factors influencing forest fire occurrence at a local spatial scale. In: Spano, Donatella; Bacciu, Valentina; Salis, Michele; Sirca, Costatino (eds.). Modelling Fire Behavior and Risk. Global Fire Monitoring Center: Freiburg, Germany, 181-186.</p>
 <p>Climate at a glance. (2021, February). Retrieved March 01, 2021, from https://www.ncdc.noaa.gov/cag/county/mapping.</p>
