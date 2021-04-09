@@ -19,7 +19,6 @@ CS 4641 - Wildfire Susceptibility Mapping
 <h4>Correlation Matrix</h4>
  <p> </p>
  
-<p>Using a wide variety of data sets that are available publicly by a variety of environmental organizations, we plan to implement a supervised learning predictive model to evaluate future susceptibility levels of counties. We will implement dimensional reduction using PCA to shrink the number of variables in the model, thus simplifying it, while still maintaining effectiveness. Afterwards, we will implement an unsupervised learning model to cluster the susceptibility levels of counties in our study area.</p>
 <h4>PCA</h4>
  <p>Due to the plethora of variables that can go into the creation of forest fires previously stated, dimensionality reduction using PCA was implemented to shrink the number of dimensions in the model, thus simplifying it, while still maintaining effectiveness (Chas-Amil et al). 
   The fit and transformation of the dataset was calculated using the PCA class from the skLearn.decompossion module, and reduced the data down to eight principle components. The explained variance for each principal component was then found and summed across the components to ensure 95% of the explained variance was accounted for in the model. This new dataset was then used in different regression models to test the accuracy of the model. 
