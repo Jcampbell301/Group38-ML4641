@@ -56,6 +56,7 @@ CS 4641 - Wildfire Susceptibility Mapping
  <p>These data were all implemented into different sheets and then fully compiled into one sheet to be exported as a CSV file for ease of use with code. The CSV file was imported into clean.py along with the Pandas module. The read_csv() function provided a convenient way to organize all these data into a dataframe. When importing the CSV file, a couple features of the data were incorporated as strings rather than numerical values (int, float, etc.), which were more desirable to model with. Strings would cause problems within the model as the object values would not be feasible for numerical modeling.</p>
 
  <figure>
+  <img src="DataScreenShot.png" alt="table2" height = "325" width = "1340" class="center">
   <figcaption><i><b>Table.2</b> Sample of Processed Data</i></figcaption>
  </figure>
  
@@ -118,12 +119,12 @@ CS 4641 - Wildfire Susceptibility Mapping
 </p>
  
  <figure>
-  <img src="table4.PNG" alt="accuracies" height = "200" width = "500" class="center">
+  <img src="table4.PNG" alt="accuracies" height = "200" width = "600" class="center">
   <figcaption><i><b>Table.4</b> Accuracy for Each Round</i></figcaption>
  </figure>
  
  <figure>
-  <img src="accuracies.png" alt="accuracies" height = "300" width = "496" class="center">
+  <img src="accuracies.png" alt="accuracies" height = "400" width = "496" class="center">
   <figcaption><i><b>Figure.3</b></i></figcaption>
  </figure>
  
@@ -131,26 +132,26 @@ CS 4641 - Wildfire Susceptibility Mapping
  </p>
  
   <figure>
-   <img src="classifications_tf.png" alt="Figure 4" height = "300" width = "496" class="center">
+   <img src="classifications_tf.png" alt="Figure 4" height = "400" width = "496" class="center">
    <figcaption><i><b>Figure.4</b></i></figcaption>
   </figure>
  
  <p>After PCA dimensionality reduction was processed on the features, the prediction results on classification proved to be even more accurate than they were before, which is evidenced in the table and figure below:</p>
  
   <figure>
-   <img src="table5.PNG" alt="Table 5" height = "200" width = "500" class="center">
+   <img src="table5.PNG" alt="Table 5" height = "200" width = "600" class="center">
    <figcaption><i><b>Table.5</b> Accuracy After PCA</i></figcaption>
   </figure>
  
   <figure>
-   <img src="accuracies_PCA.png" alt="Acc after PCA" height = "300" width = "496" class="center">
+   <img src="accuracies_PCA.png" alt="Acc after PCA" height = "400" width = "496" class="center">
    <figcaption><i><b>Figure.5</b> Accuracy After PCA</i></figcaption>
   </figure>
  
  <p>The accuracy results above show that with a reduction in features through PCA we were able to yield more meaningful classification predictions. This is especially the case for the first round, using 2011 & 2012 years for states as testing data. We can see that there was a dramatic increase in accuracy here for classification of susceptibility prediction compared to pre-PCA dimensionality reduction. Below also shows the classification results for 2019 & 2020 states used for testing.</p>
  
  <figure>
-   <img src="classifications_tf_PCA.png" alt="class tf pca" height = "300" width = "496" class="center">
+   <img src="classifications_tf_PCA.png" alt="class tf pca" height = "400" width = "496" class="center">
    <figcaption><i><b>Figure.6</b> Accuracy After PCA</i></figcaption>
   </figure>
  
