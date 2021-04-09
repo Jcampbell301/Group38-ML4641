@@ -40,7 +40,7 @@ CS 4641 - Wildfire Susceptibility Mapping
  <p><b>Table 1</b>, shown below, details each variable used and provides a brief description. Note that some variables were derived from a single dataset. For example, max temperature was calculated on a yearly basis from the same data set that average temperature was calculated.</p>
  <figure>
   <img src="Table 1.jpg" alt="Table 1" height = "474" width = "500" class="center">
-  <figcaption><i><b>Figure.1</b> Description of Parameters</i></figcaption>
+  <figcaption><i><b>Table.1</b> Description of Parameters</i></figcaption>
  </figure>
  
  
@@ -52,10 +52,23 @@ CS 4641 - Wildfire Susceptibility Mapping
 
  <p>These data were all implemented into different sheets and then fully compiled into one sheet to be exported as a CSV file for ease of use with code. The CSV file was imported into clean.py along with the Pandas module. The read_csv() function provided a convenient way to organize all these data into a dataframe. When importing the CSV file, a couple features of the data were incorporated as strings rather than numerical values (int, float, etc.), which were more desirable to model with. Strings would cause problems within the model as the object values would not be feasible for numerical modeling.</p>
 
+ <figure>
+  <figcaption><i><b>Table.2</b> Sample of Processed Data</i></figcaption>
+ </figure>
+ 
+ <p>Each feature and label was processed in order to eliminate any string objects (and thus turning them into integers or floats) and then incorporated into numpy arrays. To do this, we had a series of conditionals for each feature and the label to check if the column datatype of the dataframe was designated “object”. If so, then the dataframe column values were translated into a list using the toList() function in Pandas then the list was iterated through to eliminate all commas. This list was then translated into a numpy array. If the dataframe column type was not designated “object,” then the dataframe column was incorporated into a numpy array using the to_numpy() function in Pandas. Once the numpy arrays have been created for each list, we implemented a newaxis to each array, specifically to concatenate the features with each other to create a 2-D features matrix using the concatenate() function in numpy. At the end of the data cleaning process, the labels were processed into a (480,1) shape numpy array and the features were processed into a (480,12) numpy array. We had a designated python file for cleaning this data and preparing the matrix for the coding files which implemented our modeling.</p>
+
  
 <h3>Methods</h3> 
 <h4>Correlation Matrix</h4>
- <p></p>
+ <p>With the data cleaned, a correlation matrix (<b>Figure 1</b>) was made by plotting the correlation output between each parameter using the built in correl() function of Google Sheets. The output was a 12 by 12 matrix with each entry corresponding to the correlation between its respective row and column variable. For this reason, the diagonal values were 1, and the matrix is symmetric across the diagonal.</p>
+ 
+ <figure>
+  <img src="Table 1.jpg" alt="Table 1" height = "474" width = "500" class="center">
+  <figcaption><i><b>Figure.1</b> Correlation Matrix</i></figcaption>
+ </figure>
+ 
+ <p>It seemed reasonable that some of the parameters might be connected. For example, temperature might be related to precipitation. It was found that population was the most correlated parameter with the outcome number of wildfires, with a value of .679. Additionally, humidity was related to precipitation with a correlation of .664. Finally, forest cover was found to be closely related to precipitation as well. The output of this matrix signaled that dimensionality reduction could be useful for the model.</p>
  
 <h4>PCA</h4>
  <p>Due to the plethora of variables that can go into the creation of forest fires previously stated, dimensionality reduction using PCA was implemented to shrink the number of dimensions in the model, thus simplifying it, while still maintaining effectiveness (Chas-Amil et al). 
@@ -95,13 +108,11 @@ CS 4641 - Wildfire Susceptibility Mapping
 <p>One challenge that this project will have to work around is potential inconsistency in datasets due to the nature of climate science. For example, a measurement as basic as temperature can have a large amount of variance for a location depending on how it is measured. If the measurement occurs in a shady area, over concrete, during a windy period, etc., then that can affect the reading. Additionally, the time range of datasets might prove to be a source of inconsistency. Technology is constantly developing. The instruments used to measure each of the factors that might be considered for wildfires have likely changed in some capacity over time. This will likely further contribute to a lack of precision for any datasets used. While there may be obstacles present, the potential outcome is meaningful: having a means to predict wildfire impact can save property, the climate, and ultimately, lives. </p>
 
 <h3>References</h3>
-<p>1. Chas-Amil, Maria Luisa; Touza, Julia M.; Prestemon, Jeffrey P.; McClean, Colin J. 2012. Natural and social factors influencing forest fire occurrence at a local spatial scale. In: Spano, Donatella; Bacciu, Valentina; Salis, Michele; Sirca, Costatino (eds.). Modelling Fire Behavior and Risk. Global Fire Monitoring Center: Freiburg, Germany, 181-186.</p>
-<p>2. Climate at a glance. (2021, February). Retrieved March 01, 2021, from https://www.ncdc.noaa.gov/cag/county/mapping.</p>
-<p>3. Wildfire Statistics. (2021, January 04). Retrieved March 01, 2021, from https://crsreports.congress.gov/.</p>
-<p>4. U. S. C. Bureau, “Evaluation Estimates,” The United States Census Bureau, 21-Dec-2020. [Online]. Available: https://www.census.gov/programs-surveys/popest/technical-documentation/research/evaluation-estimates.html. [Accessed: 04-Apr-2021].</p>
-<p>5. “Coordination and cooperation in wildland fire management.,” Welcome to the Nation's Logistical Support Center | National Interagency Fire Center. [Online]. Available: https://www.nifc.gov/. [Accessed: 04-Apr-2021].<\p>
-<p>6. Wildfire Statistics. (2021, January 04). Retrieved March 01, 2021, from https://crsreports.congress.gov/.<\p>
-<p>7. U. S. C. Bureau, “State Area Measurements and Internal Point Coordinates,” The United States Census Bureau, 09-Aug-2018. [Online]. Available: https://www.census.gov/geographies/reference-files/2010/geo/state-area.html. [Accessed: 04-Apr-2021].<\p>
+<p>Chas-Amil, Maria Luisa; Touza, Julia M.; Prestemon, Jeffrey P.; McClean, Colin J. 2012. Natural and social factors influencing forest fire occurrence at a local spatial scale. In: Spano, Donatella; Bacciu, Valentina; Salis, Michele; Sirca, Costatino (eds.). Modelling Fire Behavior and Risk. Global Fire Monitoring Center: Freiburg, Germany, 181-186.</p>
+<p>Climate at a glance. (2021, February). Retrieved March 01, 2021, from https://www.ncdc.noaa.gov/cag/county/mapping.</p>
+<p>Wildfire Statistics. (2021, January 04). Retrieved March 01, 2021, from https://crsreports.congress.gov/.</p>
+
+<iframe width="1048" height="655" src="https://www.youtube.com/embed/ZqiDOShWvDw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 </body>
