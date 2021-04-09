@@ -85,16 +85,21 @@ CS 4641 - Wildfire Susceptibility Mapping
 </p>
  
  <h4>Linear Regression</h4>
- <p></p>
+ <p>Two sets of data were gathered to be trained and tested by linear regression. The first data set was the originally compiled data with 480 data points consisting of 12 features and one result for the number of wildfires. The second set of data were from the output of the created PCA method which returned 480 data points consisting of eight features and one result for the number of wildfires. In both instances, the features were the “x” dataset and the number of wildfires were the ”y” dataset. All datasets were split in two with the first being the first 80% of the data (referring to 2011-2018) which was used for training, and the remaining 20% (referring to 2019-2020) was used for testing. The training data was trained using linear regression on the LinearRegression import from sklearn. Because there can not exist negative wildfires, any negative value predicted from linear regression was replaced with zero. </p>
+ 
  <h4>Logistic Regression</h4>
- <p></p>
+ <p>Logistic regression was handled in a similar fashion to linear regression. After taking in the original set of 480 data points with 12 features and their respective wildfire numbers, the data was trimmed to contain only 11 features to be more accommodating to the logistic regression. Population was having an extreme effect on the model’s predictions due to the sheer size of the values relative to the other 11 features, and in turn was removed to increase the effectiveness of the model. The two most recent years of data points were established as testing data, with the remaining 80% being allocated for training purposes. The training data was then used by the logistic regression model, which was imported from sklearn, to fit the model, and ultimately predict the amount of wildfires for each of the test data points.</p>
 
 
 <h3>Results</h3>
-<p>Our evaluation will lead to a label of ranges across the study area depicting the susceptibility levels of wildfires in respective counties. These levels will then be clustered to help identify larger trends among the variety of societal and environmental factors we intend on surveying. Once these larger trends are established, we will look into the primary reason that these regions are overwhelmingly susceptible and attempt to identify appropriate action to reduce these susceptibility index scores in the future.</p>
  <h4>PCA</h4>
-  <p>The goal when running PCA was to reduce the number of inputs while still accurately representing the dataset. In order to maintain the integrity of the data, 95% of the explained variance needed to be accounted for after the reduction took place.</p>
+  <p>The goal when running PCA was to reduce the number of inputs while still accurately representing the dataset. In order to maintain the integrity of the data, 95% of the explained variance needed to be accounted for after the reduction took place. </p>
+ 
+ <figure>
   <img src="ExplainedVariance.png" alt="Principal Component Graph" height = "500" width = "650" class="center">
+  <figcaption><i><b>Figure.2</b> Variance and Components</i></figcaption>
+ </figure>
+  
   <p>This above graph led to the conclusion that it was possible to safely reduce four dimensions and still maintain the integrity of the data. 
    Below is a matrix showing how each principal component contributed to the total expected variance.</p>
   <img src="ExplainedVarMatrix.png" alt="Explained Variance Matrix" height = "150" width = "663" class="center">
