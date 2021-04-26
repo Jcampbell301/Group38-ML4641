@@ -160,14 +160,14 @@ CS 4641 - Wildfire Susceptibility Mapping
   </figure>
  <figure>
   <img src="NBCorrelationMatrixAccuracies.png" alt="NB Correlation Matrix Accuracies" height = "400" width = "496" class="center">
-   <figcaption><i><b>Figure.8</b>ADD</i></figcaption>
+   <figcaption><i><b>Figure.8</b></i></figcaption>
   </figure>
   <p>
 The accuracy results above show that using only the features with positive correlation matrix values in regards to wildfire counts yielded the best results from experimentation. The notable distinction for the positive correlation matrix valued features was evidenced in the 2011-2012 testing years data, where the accuracy was significantly higher than it was for the same testing years in the original instance of data and in PCA. Below also shows the classification results using the years 2019 & 2020 as testing years.
  </p>
  <figure>
   <img src="NBCorrelationMatrixActualvsPredicted.png" alt="NB Correlation Matrix Actual v Predicted" height = "400" width = "496" class="center">
-   <figcaption><i><b>Figure.9</b>ADD</i></figcaption>
+   <figcaption><i><b>Figure.9</b></i></figcaption>
   </figure>
  <p>
   With only four points predicted accurately in the classification, it is evidenced sufficiently that the utilization of the correlation matrix for feature selection proved to be beneficial towards the classification.
@@ -199,7 +199,7 @@ The accuracy results above show that using only the features with positive corre
 
  
  <h4>Logistic Regression</h4>
- <p>The predicted classifications for wildfires were compared to the actual wildfire statistics for the testing data through both a Root Mean Square Error (RMSE) and R<SUP>2</SUP> using mean_squared_error and R2_score functions from sklearn. After normalizing the data in both the predicted amount of wildfires and actual amount, the RMSE was determined to be 0.14, with an R<SUP>2</SUP>of .48.  The results, shown in Figure 9, can be seen comparing the 96 points used in our test data and the logistic regression classifications (shown in magenta) as well as the actual wildfire amounts for each data point (shown in yellow). The logistic regression failed to account for a few outliers, in turn leading to the weaker RMSE and R<SUP>2</SUP>. 
+ <p>The predicted classifications for wildfires were compared to the actual wildfire statistics for the testing data through both a Root Mean Square Error (RMSE) and R<SUP>2</SUP> using mean_squared_error and R2_score functions from sklearn. After normalizing the data in both the predicted amount of wildfires and actual amount, the RMSE was determined to be 0.14, with an R<SUP>2</SUP> of .48.  The results, shown in Figure 13, can be seen comparing the 96 points used in our test data and the logistic regression classifications (shown in magenta) as well as the actual wildfire amounts for each data point (shown in yellow). The logistic regression failed to account for a few outliers, in turn leading to the weaker RMSE and R<SUP>2</SUP>. 
 </p>
  <figure>
   <img src = "LogRes.png" alt = "Logistic Regression Model Predictions v Actual" height = "300" width = "496">
