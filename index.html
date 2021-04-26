@@ -66,7 +66,7 @@ CS 4641 - Wildfire Susceptibility Mapping
  <p>Each feature and label was processed in order to eliminate any string objects (and thus turning them into integers or floats) and then incorporated into numpy arrays. To do this, we had a series of conditionals for each feature and the label to check if the column datatype of the dataframe was designated “object”. If so, then the dataframe column values were translated into a list using the toList() function in Pandas then the list was iterated through to eliminate all commas. This list was then translated into a numpy array. If the dataframe column type was not designated “object,” then the dataframe column was incorporated into a numpy array using the to_numpy() function in Pandas. Once the numpy arrays have been created for each list, we implemented a newaxis to each array, specifically to concatenate the features with each other to create a 2-D features matrix using the concatenate() function in numpy. At the end of the data cleaning process, the labels were processed into a (480,1) shape numpy array and the features were processed into a (480,12) numpy array. We had a designated python file for cleaning this data and preparing the matrix for the coding files which implemented our modeling.</p>
  
 <h4>Correlation Matrix</h4>
- <p>With the data cleaned, a correlation matrix (<b>Figure 1</b>)was made by plotting the correlation output between each parameter using the built in correl() function of Google Sheets. The output was a 12 by 12 matrix with each entry corresponding to the correlation between its respective row and column variable. For this reason, the diagonal values were 1, and the matrix is symmetric across the diagonal.</p>
+ <p>With the data cleaned, a correlation matrix (<b>Figure 1</b>) was made by plotting the correlation output between each parameter using the built in correl() function of Google Sheets. The output was a 12 by 12 matrix with each entry corresponding to the correlation between its respective row and column variable. For this reason, the diagonal values were 1, and the matrix is symmetric across the diagonal.</p>
  <figure>
   <img src="correlationMat.jpg" alt="CorrMat" height = "325" width = "1340" class="center">
   <figcaption><i><b>Figure.1</b> Correlation Matrix</i></figcaption>
@@ -136,19 +136,19 @@ CS 4641 - Wildfire Susceptibility Mapping
  
   <figure>
    <img src="table5.PNG" alt="Table 5" height = "200" width = "600" class="center">
-   <figcaption><i><b>Table.5</b> Accuracy After PCA</i></figcaption>
+   <figcaption><i><b>Table.5</b>Accuracy After PCA</i></figcaption>
   </figure>
  
   <figure>
    <img src="accuracies_PCA.png" alt="Acc after PCA" height = "400" width = "496" class="center">
-   <figcaption><i><b>Figure.6</b> Accuracy After PCA</i></figcaption>
+   <figcaption><i><b>Figure.6</b></i></figcaption>
   </figure>
  
  <p>The accuracy results above show that with a reduction in features through PCA we were able to yield more meaningful classification predictions. This is especially the case for the first round, using 2011 & 2012 years for states as testing data. There was a dramatic increase in accuracy here for classification of susceptibility prediction compared to pre-PCA dimensionality reduction. Below also shows the classification results for 2019 & 2020 states used for testing.
  </p>
  <figure>
    <img src="classifications_tf_PCA.png" alt="class tf pca" height = "400" width = "496" class="center">
-   <figcaption><i><b>Figure.6</b> Accuracy After PCA</i></figcaption>
+   <figcaption><i><b>Figure.7</b>/i></figcaption>
   </figure>
  <p>It is evidenced here that while the classification for this testing set after PCA proves to be even better compared to the classification for this testing set before PCA.</p>
  <p>The Naive Bayes model was lastly run on the three features that yielded positive values on the correlation matrix in regards to Wildfire. This led to even more accurate results and an improved prediction model compared to both the full instance of data and the data after PCA, as evidenced in the table and figure below denoting the classification accuracy results.</p>
@@ -159,15 +159,15 @@ CS 4641 - Wildfire Susceptibility Mapping
    <figcaption><i><b>Table.6</b>ADD</i></figcaption>
   </figure>
  <figure>
-  <img src="" alt="ADD IMAGE HERE" height = "400" width = "496" class="center">
-   <figcaption><i><b>Table.6</b>ADD</i></figcaption>
+  <img src="" alt="NBCorrelationMatrixAccuracies.png" height = "400" width = "496" class="center">
+   <figcaption><i><b>Figure.8</b>ADD</i></figcaption>
   </figure>
   <p>
 The accuracy results above show that using only the features with positive correlation matrix values in regards to wildfire counts yielded the best results from experimentation. The notable distinction for the positive correlation matrix valued features was evidenced in the 2011-2012 testing years data, where the accuracy was significantly higher than it was for the same testing years in the original instance of data and in PCA. Below also shows the classification results using the years 2019 & 2020 as testing years.
  </p>
  <figure>
-  <img src="" alt="ADD IMAGE HERE" height = "400" width = "496" class="center">
-   <figcaption><i><b>Table.6</b>ADD</i></figcaption>
+  <img src="NBCorrelationMatrixActualvsPredicted.png" alt="ADD IMAGE HERE" height = "400" width = "496" class="center">
+   <figcaption><i><b>Figure.9</b>ADD</i></figcaption>
   </figure>
  <p>
   With only four points predicted accurately in the classification, it is evidenced sufficiently that the utilization of the correlation matrix for feature selection proved to be beneficial towards the classification.
